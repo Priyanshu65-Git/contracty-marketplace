@@ -1,8 +1,8 @@
-# Contracty
+# Contracty - Contractor Marketplace
 
-> Find your trusted local contractor. A two-sided marketplace that helps homeowners discover verified tradespeople and gives contractors a simple, branded space to showcase their work, receive inquiries, and grow their business.
+> A modern marketplace for discovering trusted contractors, exploring their work, and connecting with professionals for your next project.
 
-Contracty is a full-stack Next.js application built around a contractor directory with portfolios, reviews, geolocated service areas, and an inquiry-based messaging system. Homeowners can browse, filter, and contact contractors; contractors can manage their own profile, portfolio, and inbox from a dedicated dashboard.
+Contracty is a full-stack contractor marketplace designed to make it easier for homeowners to discover, compare, and contact local professionals while giving contractors a dedicated space to showcase their services and manage inquiries.
 
 ---
 
