@@ -31,8 +31,11 @@ const FeaturedContractors = async () => {
     <section className="bg-white px-4 py-4 pb-8">
       <div className="w-full container-xl lg:container m-auto">
         <h2 className="text-3xl font-extrabold text-[#071525] text-center my-4 ">
-          Featured This Week
+          Trusted Professionals
         </h2>
+        <p className="text-gray-500 text-center max-w-2xl mx-auto">
+          Explore experienced contractors ready to bring your next project to life.
+        </p>
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mt-8 max-w-6xl mx-auto">
           {contractors.map((contractor) => (
             <FeaturedContractorCard
