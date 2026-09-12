@@ -63,7 +63,7 @@ const Navbar = () => {
             className="rounded-md px-1 py-2 text-sm font-medium text-slate-700 transition hover:text-orange-500"
             onClick={() => setIsMenuOpen(false)}
           >
-            Find Contractors
+            Browse Contractors
           </Link>
           {session && session.user.role === "contractor" && (
             <Link
@@ -71,7 +71,7 @@ const Navbar = () => {
               className="rounded-md px-1 py-2 text-sm font-medium text-slate-700 transition hover:text-orange-500"
               onClick={() => setIsMenuOpen(false)}
             >
-              Dashboard
+              My Dashboard
             </Link>
           )}
           {/* <!-- Right Side Menu (Logged Out) --> */}
@@ -182,7 +182,7 @@ const Navbar = () => {
                       id="user-menu-item-2"
                       onClick={() => setIsProfileMenuOpen(false)}
                     >
-                      Saved Contractors
+                      Saved Professionals
                     </Link>
                     <button
                       className="block px-4 py-2 text-sm text-gray-700 cursor-pointer"
@@ -280,7 +280,7 @@ const Navbar = () => {
                       id="user-menu-item-2"
                       onClick={() => setIsProfileMenuOpen(false)}
                     >
-                      Saved Contractors
+                      Saved Professionals
                     </Link>
                     <button
                       className="block px-4 py-2 text-sm text-gray-700"
