@@ -1,4 +1,5 @@
 "use client";
+import Link from "next/link";
 import { useState } from "react";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
@@ -102,13 +103,13 @@ export default function ContactForm() {
 
       <p className="text-xs text-gray-400">
         By sending, you agree to our{" "}
-        <a href="/terms-of-service" className="underline hover:text-[#F97316]">
-          Terms
-        </a>{" "}
+      <Link href="/terms-of-service" className="underline hover:text-[#F97316]">
+        Terms
+      </Link>{" "}
         and{" "}
-        <a href="/privacy-policy" className="underline hover:text-[#F97316]">
-          Privacy Policy
-        </a>
+       <Link href="/privacy-policy" className="underline hover:text-[#F97316]">
+        Privacy Policy
+        </Link>
         .
       </p>
     </form>
