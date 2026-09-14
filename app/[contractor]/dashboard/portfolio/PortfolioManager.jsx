@@ -1,5 +1,5 @@
 "use client";
-import { useState, useEffect } from "react";
+import { useState } from "react";
 import { useRouter } from "next/navigation";
 import { Button, buttonVariants } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
@@ -174,19 +174,18 @@ function AddProjectDialog({ slug, onSuccess }) {
 
 export default function PortfolioManager({ items: initialItems, slug }) {
   const router = useRouter();
-  const [items, setItems] = useState(initialItems);
+  const [deletedIds, setDeletedIds] = useState([]);
   const [deleting, setDeleting] = useState(null);
 
-  // Refresh local items if initialItems change (e.g. after adding/deleting)
-  useEffect(() => {
-    setItems(initialItems);
-  }, [initialItems]);
+  const items = initialItems.filter(
+    (item) => !deletedIds.includes(item._id)
+  );
 
   async function handleDelete(id) {
     setDeleting(id);
     try {
       await deletePortfolioItem(slug, id);
-      setItems((prev) => prev.filter((i) => i._id !== id));
+      setDeletedIds((prev) => [...prev, id]);
       toast.success("Project removed");
     } catch (err) {
       toast.error("Failed to delete");
