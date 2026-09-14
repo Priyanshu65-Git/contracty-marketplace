@@ -7,8 +7,10 @@ import FeaturedContractorCard from "@/components/FeaturedContractorCard";
 const FeaturedContractors = async () => {
   await connectDB();
 
-  const allFeatured = await Contractor.find({ featured: true }).lean();
-  const contractors = allFeatured.sort(() => 0.5 - Math.random()).slice(0, 3);
+  const contractors = await Contractor.aggregate([
+    { $match: { featured: true } },
+    { $sample: { size: 3 } },
+  ]);
 
   const contractorIds = contractors.map((c) => c._id);
 
