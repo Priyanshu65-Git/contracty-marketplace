@@ -1,7 +1,7 @@
 "use client";
 
 import { useRouter, useSearchParams } from "next/navigation";
-import { useState, useEffect } from "react";
+import { useState } from "react";
 import {
   MapPin,
   Map,
@@ -87,32 +87,32 @@ const RangeInputs = ({
   </div>
 );
 
-const SidebarFilter = () => {
-  const router = useRouter();
-  const searchParams = useSearchParams();
+const SidebarFilterForm = ({ initial, router }) => {
+//  const router = useRouter();
+//  const searchParams = useSearchParams();
 
-  const initial = {
-    serviceArea: searchParams.get("serviceArea") || "",
-    trade: searchParams.get("trade") || "",
-    "serviceArea.address": searchParams.get("serviceArea.address") || "",
-    "serviceArea.postcode": searchParams.get("serviceArea.postcode") || "",
-    "priceRange.hourly.min": searchParams.get("priceRange.hourly.min") || "",
-    "priceRange.hourly.max": searchParams.get("priceRange.hourly.max") || "",
-    "priceRange.project.min": searchParams.get("priceRange.project.min") || "",
-    "priceRange.project.max": searchParams.get("priceRange.project.max") || "",
-    "averageRating.min": searchParams.get("averageRating.min") || "",
-    "averageRating.max": searchParams.get("averageRating.max") || "",
-    "yearsExperience.min": searchParams.get("yearsExperience.min") || "",
-    available: searchParams.get("available") === "true",
-    verified: searchParams.get("verified") === "true",
-  };
+//  const initial = {
+//    serviceArea: searchParams.get("serviceArea") || "",
+//    trade: searchParams.get("trade") || "",
+ //   "serviceArea.address": searchParams.get("serviceArea.address") || "",
+//    "serviceArea.postcode": searchParams.get("serviceArea.postcode") || "",
+//    "priceRange.hourly.min": searchParams.get("priceRange.hourly.min") || "",
+//    "priceRange.hourly.max": searchParams.get("priceRange.hourly.max") || "",
+//    "priceRange.project.min": searchParams.get("priceRange.project.min") || "",
+//    "priceRange.project.max": searchParams.get("priceRange.project.max") || "",
+//    "averageRating.min": searchParams.get("averageRating.min") || "",
+//    "averageRating.max": searchParams.get("averageRating.max") || "",
+//    "yearsExperience.min": searchParams.get("yearsExperience.min") || "",
+//    available: searchParams.get("available") === "true",
+//    verified: searchParams.get("verified") === "true",
+//  };
 
   const [filters, setFilters] = useState(initial);
 
-  useEffect(() => {
-    setFilters(initial);
+//  useEffect(() => {
+//    setFilters(initial);
     // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [searchParams.toString()]);
+//  }, [searchParams.toString()]);
 
   const handleChange = (e) => {
     const { name, value, type, checked } = e.target;
@@ -303,6 +303,35 @@ const SidebarFilter = () => {
         Apply Filters
       </Button>
     </form>
+  );
+};
+
+const SidebarFilter = () => {
+  const router = useRouter();
+  const searchParams = useSearchParams();
+
+  const initial = {
+    serviceArea: searchParams.get("serviceArea") || "",
+    trade: searchParams.get("trade") || "",
+    "serviceArea.address": searchParams.get("serviceArea.address") || "",
+    "serviceArea.postcode": searchParams.get("serviceArea.postcode") || "",
+    "priceRange.hourly.min": searchParams.get("priceRange.hourly.min") || "",
+    "priceRange.hourly.max": searchParams.get("priceRange.hourly.max") || "",
+    "priceRange.project.min": searchParams.get("priceRange.project.min") || "",
+    "priceRange.project.max": searchParams.get("priceRange.project.max") || "",
+    "averageRating.min": searchParams.get("averageRating.min") || "",
+    "averageRating.max": searchParams.get("averageRating.max") || "",
+    "yearsExperience.min": searchParams.get("yearsExperience.min") || "",
+    available: searchParams.get("available") === "true",
+    verified: searchParams.get("verified") === "true",
+  };
+
+  return (
+    <SidebarFilterForm
+      key={searchParams.toString()}
+      initial={initial}
+      router={router}
+    />
   );
 };
 
