@@ -1,4 +1,5 @@
 "use client";
+import Image from "next/image";
 import { useState } from "react";
 import { useRouter } from "next/navigation";
 import { Button, buttonVariants } from "@/components/ui/button";
@@ -131,10 +132,12 @@ function AddProjectDialog({ slug, onSuccess }) {
                     key={url}
                     className="relative aspect-square overflow-hidden rounded-md border border-border bg-muted"
                   >
-                    <img
+                    <Image
                       src={url}
                       alt={`Upload ${idx + 1}`}
-                      className="h-full w-full object-cover"
+                      fill
+                      unoptimized
+                      className="object-cover"
                     />
                     <button
                       type="button"
