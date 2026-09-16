@@ -50,11 +50,13 @@ const FeaturedContractorCard = async ({ contractor, profileImages }) => {
                 href={`/contractors/${slug}`}
                 className="h-full w-full rounded-full"
               >
-                <img
+                <Image
                   src={profileImage}
                   alt={name}
+                  width={48}
+                  height={48}
                   className="h-full w-full rounded-full object-cover"
-                />
+                  />
               </Link>
             )}
           </div>
