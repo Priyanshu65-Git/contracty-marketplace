@@ -111,7 +111,7 @@ const SidebarFilterForm = ({ initial, router }) => {
 
 //  useEffect(() => {
 //    setFilters(initial);
-    // eslint-disable-next-line react-hooks/exhaustive-deps
+  
 //  }, [searchParams.toString()]);
 
   const handleChange = (e) => {
