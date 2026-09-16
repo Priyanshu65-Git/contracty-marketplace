@@ -16,9 +16,10 @@ import {
 export default function ShareButtons({ contractorId }) {
   const [url, setUrl] = useState("");
 
-  useEffect(() => {
+   useEffect(() => {
+  // eslint-disable-next-line react-hooks/set-state-in-effect
     setUrl(window.location.href);
-  }, []);
+      }, []);
 
   if (!url) return null;
 
