@@ -44,7 +44,7 @@ const ContractorMap = ({ serviceArea }) => {
     }
 
     fetchCoordinates();
-  }, []);
+  }, [serviceArea.radiusKm, serviceArea.address, serviceArea.postcode]);
 
   useEffect(() => {
     if (map.current) return;
