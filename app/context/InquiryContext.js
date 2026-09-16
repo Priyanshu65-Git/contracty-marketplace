@@ -19,7 +19,7 @@ export function InquiryProvider({ children }) {
         if (res.countInquiries) setUnreadCount(res.countInquiries);
       })
     }
-  }, [getUnreadInquiriesCount, session]);
+  }, [session]);
   return (
     <InquiryContext.Provider value={{ unreadCount, setUnreadCount }}>
       {children}
